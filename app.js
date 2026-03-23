@@ -183,25 +183,29 @@ Retorne APENAS um JSON válido, sem texto antes ou depois:
   ]
 }`;
 
-  const res = await fetch(
-    `https://generativelanguage.googleapis.com/v1beta/models/gemini-2.0-flash:generateContent?key=${APP.apiKey}`,
-    {
-      method: 'POST',
-      headers: { 'Content-Type': 'application/json' },
-      body: JSON.stringify({
-        contents: [{ parts: [
-          { fileData: { mimeType: 'video/mp4', fileUri } },
-          { text: prompt }
-        ]}],
-        generationConfig: { temperature: 0.2, maxOutputTokens: 4096 },
-      }),
-    }
-  );
-
-  if (!res.ok) {
-    const err = await res.json().catch(() => ({}));
-    throw new Error(err.error?.message || `Erro da IA (${res.status})`);
+  const MODELS = ['gemini-2.5-flash', 'gemini-2.5-pro', 'gemini-2.0-flash-lite'];
+  let res, lastError;
+  for (const model of MODELS) {
+    res = await fetch(
+      `https://generativelanguage.googleapis.com/v1beta/models/${model}:generateContent?key=${APP.apiKey}`,
+      {
+        method: 'POST',
+        headers: { 'Content-Type': 'application/json' },
+        body: JSON.stringify({
+          contents: [{ parts: [
+            { fileData: { mimeType: 'video/mp4', fileUri } },
+            { text: prompt }
+          ]}],
+          generationConfig: { temperature: 0.2, maxOutputTokens: 4096 },
+        }),
+      }
+    );
+    if (res.ok) break;
+    const errBody = await res.json().catch(() => ({}));
+    lastError = errBody.error?.message || `Erro ${res.status}`;
   }
+
+  if (!res.ok) throw new Error(lastError || 'Nenhum modelo disponível.');
 
   const data = await res.json();
   let text = data.candidates?.[0]?.content?.parts?.[0]?.text?.trim() || '';

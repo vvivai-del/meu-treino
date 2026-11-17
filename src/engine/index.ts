@@ -43,6 +43,9 @@ export { normalizeName, matchExercise } from './catalog';
 export { parsePrescription } from './prescription';
 export { suggestSets, estimate1RM } from './suggest';
 export { migrateLegacy } from './legacy';
+export { exerciseProgress, weeklyVolumeByMuscle, summarizeSets, weekStartOf } from './stats';
+export type { ExerciseProgressPoint, WeeklyMuscleVolume } from './stats';
+export { splitLabel } from './catalog';
 
 // Assinaturas de referência (a implementação deve respeitá-las):
 //

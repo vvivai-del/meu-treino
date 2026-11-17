@@ -1,0 +1,71 @@
+.chips {
+  display: flex;
+  gap: 8px;
+  overflow-x: auto;
+  margin: 0 -16px;
+  padding: 0 16px 2px;
+  scrollbar-width: none;
+}
+.chips::-webkit-scrollbar { display: none; }
+.chip {
+  flex-shrink: 0;
+  min-height: 44px;
+  padding: 0 16px;
+  border-radius: 22px;
+  border: 1px solid var(--border);
+  background: var(--card);
+  color: var(--text2);
+  font-size: 14px;
+  font-weight: 600;
+  cursor: pointer;
+}
+.chip.on { background: var(--accent-dim); border-color: var(--accent); color: var(--accent); }
+
+.catalog input[type='search'] { min-height: 48px; font-size: 16px; }
+
+.cat-list { list-style: none; display: flex; flex-direction: column; border-top: 1px solid var(--border); }
+.cat-row {
+  display: flex;
+  align-items: center;
+  gap: 10px;
+  min-height: 60px;
+  padding: 10px 2px;
+  border-bottom: 1px solid var(--border);
+  color: var(--text);
+}
+.cat-row:active { background: var(--card); }
+.cat-row-main { flex: 1; min-width: 0; display: flex; flex-direction: column; gap: 1px; }
+.cat-row-name { font-size: 16px; font-weight: 600; line-height: 1.3; }
+.cat-row-sub { font-size: 13px; }
+.cat-video {
+  flex-shrink: 0;
+  font-size: 12px;
+  font-weight: 600;
+  color: var(--accent);
+  background: var(--accent-dim);
+  border-radius: 12px;
+  padding: 2px 8px;
+}
+.cat-chevron { color: var(--text2); font-size: 22px; flex-shrink: 0; }
+.cat-none { text-align: center; padding: 24px 0; }
+
+.cat-empty { text-align: center; display: flex; flex-direction: column; align-items: center; gap: 10px; padding: 32px 20px; }
+.cat-empty-icon { font-size: 44px; }
+.cat-empty-btn { margin-top: 6px; min-height: 48px; text-decoration: none; }
+
+.dup-strip { gap: 12px; }
+.dup-pair { display: flex; flex-direction: column; gap: 8px; padding-top: 10px; border-top: 1px solid var(--warning-border); }
+.dup-names { display: flex; flex-wrap: wrap; align-items: center; gap: 4px 8px; }
+.dup-names a { color: var(--text); font-weight: 600; }
+.dup-eq { color: var(--warning-text); }
+.dup-actions { display: flex; gap: 8px; }
+.dup-actions .btn { min-height: 44px; flex: 1; }
+.dup-more {
+  min-height: 44px;
+  background: none;
+  border: none;
+  color: var(--warning-text);
+  font-weight: 600;
+  font-size: 14px;
+  cursor: pointer;
+}

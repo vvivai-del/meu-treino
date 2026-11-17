@@ -1,0 +1,56 @@
+.hist-month { display: flex; flex-direction: column; gap: 10px; }
+.hist-month-title {
+  font-size: 14px;
+  color: var(--text2);
+  text-transform: uppercase;
+  letter-spacing: 0.5px;
+}
+.hist-list { list-style: none; display: flex; flex-direction: column; gap: 10px; }
+.hist-card { padding: 0; overflow: hidden; }
+
+.hist-head {
+  width: 100%;
+  min-height: 44px;
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  gap: 12px;
+  padding: 14px 16px;
+  background: none;
+  border: none;
+  color: var(--text);
+  text-align: left;
+  cursor: pointer;
+}
+.hist-head-main { display: flex; flex-direction: column; gap: 2px; min-width: 0; }
+.hist-date { font-size: 13px; color: var(--text2); }
+.hist-date::first-letter { text-transform: uppercase; }
+.hist-title { font-size: 17px; font-weight: 700; overflow-wrap: anywhere; }
+.hist-chevron { font-size: 18px; color: var(--text2); transition: transform 0.15s; }
+.hist-chevron.is-open { transform: rotate(180deg); }
+
+.hist-body { padding: 0 16px 16px; border-top: 1px solid var(--border); display: flex; flex-direction: column; gap: 12px; }
+.hist-ex-list { list-style: none; display: flex; flex-direction: column; }
+.hist-ex { padding: 10px 0; border-bottom: 1px solid var(--border); display: flex; flex-direction: column; gap: 2px; }
+.hist-ex:last-child { border-bottom: none; }
+.hist-ex-name { font-weight: 600; font-size: 15px; display: inline-flex; align-items: center; min-height: 28px; }
+.hist-ex-sets { font-size: 14px; color: var(--text2); }
+.hist-tag {
+  margin-left: 8px;
+  font-size: 11px;
+  padding: 1px 8px;
+  border-radius: 20px;
+  border: 1px solid var(--warning-border);
+  color: var(--warning-text);
+  background: var(--warning-bg);
+  white-space: nowrap;
+}
+
+.hist-delete { min-height: 44px; }
+.hist-confirm { display: flex; flex-direction: column; gap: 10px; font-size: 14px; }
+.hist-confirm-btns { display: flex; gap: 10px; }
+.hist-confirm-btns .btn { flex: 1; min-height: 44px; }
+.hist-danger { background: var(--danger); color: #000; }
+
+.hist-empty-icon { font-size: 48px; }
+.hist-empty-btn { margin-top: 16px; }

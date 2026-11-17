@@ -1,0 +1,211 @@
+/* Visão geral do treino */
+.tr-screen {
+  gap: 14px;
+}
+.app-shell.with-tabs .tr-screen {
+  padding-bottom: calc(var(--tabbar-h) + var(--safe-bottom) + 96px);
+}
+.tr-header h1 {
+  font-size: 26px;
+  line-height: 1.2;
+}
+.tr-date {
+  margin-top: 2px;
+}
+.tr-date::first-letter {
+  text-transform: uppercase;
+}
+.tr-video-status {
+  display: flex;
+  align-items: center;
+  gap: 8px;
+  margin-top: 8px;
+  font-size: 13px;
+  color: var(--text2);
+}
+.tr-pulse {
+  width: 8px;
+  height: 8px;
+  border-radius: 50%;
+  background: var(--accent);
+  animation: tr-pulse 1.4s ease-in-out infinite;
+}
+@keyframes tr-pulse {
+  50% { opacity: 0.25; }
+}
+.tr-video-error {
+  margin-top: 8px;
+}
+.tr-video-error .btn {
+  align-self: flex-start;
+  min-height: 44px;
+}
+
+.tr-notes summary {
+  cursor: pointer;
+  font-weight: 600;
+  min-height: 24px;
+}
+.tr-notes p {
+  margin-top: 10px;
+  font-size: 14px;
+  color: var(--text2);
+  white-space: pre-wrap;
+}
+
+.tr-blocks {
+  display: flex;
+  flex-direction: column;
+  gap: 10px;
+}
+.tr-block {
+  background: var(--card);
+  border: 1px solid var(--border);
+  border-radius: var(--radius);
+  overflow: hidden;
+}
+.tr-block.grouped {
+  border-color: rgba(0, 230, 118, 0.35);
+}
+.tr-block-tag {
+  background: var(--accent-dim);
+  color: var(--accent);
+  font-size: 11px;
+  font-weight: 700;
+  letter-spacing: 0.6px;
+  text-transform: uppercase;
+  padding: 4px 14px;
+}
+.tr-item {
+  display: flex;
+  gap: 12px;
+  padding: 12px 14px;
+}
+.tr-item + .tr-item {
+  border-top: 1px dashed var(--border);
+}
+.tr-item.pausa {
+  background: rgba(255, 200, 0, 0.04);
+}
+.tr-item-label {
+  flex: 0 0 34px;
+  height: 34px;
+  border-radius: 10px;
+  background: var(--bg2);
+  border: 1px solid var(--border);
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  font-weight: 700;
+  font-size: 13px;
+  color: var(--accent);
+}
+.tr-item-main {
+  flex: 1;
+  min-width: 0;
+}
+.tr-item-name {
+  font-size: 17px;
+  font-weight: 600;
+  line-height: 1.25;
+}
+.tr-item-meta {
+  display: flex;
+  flex-wrap: wrap;
+  align-items: baseline;
+  gap: 4px 12px;
+  margin-top: 2px;
+  font-size: 14px;
+}
+.tr-presc {
+  color: var(--text);
+}
+.tr-sug {
+  color: var(--accent);
+  font-weight: 600;
+}
+.tr-tags {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 6px;
+  margin-top: 6px;
+}
+.tr-tags:empty {
+  display: none;
+}
+.tr-tag {
+  font-size: 11px;
+  padding: 2px 8px;
+  border-radius: 20px;
+  border: 1px solid var(--border);
+  color: var(--text2);
+}
+.tr-tag-video {
+  color: var(--accent);
+  border-color: rgba(0, 230, 118, 0.3);
+}
+.tr-tag-pausa {
+  color: #ffd54f;
+  border-color: rgba(255, 200, 0, 0.35);
+}
+.tr-confirm {
+  margin-top: 10px;
+  padding: 10px 12px;
+  border-radius: var(--radius-sm);
+  background: var(--warning-bg);
+  border: 1px solid var(--warning-border);
+  font-size: 14px;
+}
+.tr-confirm strong {
+  color: var(--warning-text);
+}
+.tr-confirm-actions {
+  display: flex;
+  gap: 8px;
+  margin-top: 8px;
+}
+.tr-confirm-actions .btn {
+  min-height: 44px;
+  flex: 1;
+}
+
+.tr-secondary {
+  display: flex;
+  gap: 10px;
+}
+.tr-secondary .btn {
+  flex: 1;
+  min-height: 48px;
+  font-size: 15px;
+}
+.tr-date-btn {
+  position: relative;
+  overflow: hidden;
+}
+.tr-date-input {
+  position: absolute;
+  inset: 0;
+  width: 100%;
+  height: 100%;
+  opacity: 0;
+  cursor: pointer;
+}
+.tr-delete {
+  color: var(--danger);
+}
+
+.tr-footer {
+  position: fixed;
+  left: 0;
+  right: 0;
+  bottom: calc(var(--tabbar-h) + var(--safe-bottom));
+  max-width: 480px;
+  margin: 0 auto;
+  padding: 10px 16px;
+  background: linear-gradient(to top, var(--bg) 70%, rgba(10, 10, 10, 0));
+  z-index: 40;
+}
+.tr-start {
+  min-height: 56px;
+  font-size: 18px;
+}

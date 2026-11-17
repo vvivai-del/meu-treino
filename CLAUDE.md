@@ -27,7 +27,8 @@ Interface e textos em **português do Brasil**. Código (identificadores) em ing
 - `src/ai/` — único módulo que chama a API Gemini.
 - `src/import/` — pipeline texto + vídeo → treino no banco.
 - `src/features/<tela>/` — uma pasta por tela; CSS da tela fica junto (`*.css` importado pelo componente).
-- `src/app/` — shell, roteador por hash (`navigate`, `usePath`, `matchRoute`), boot.
+- `src/app/` — shell, roteador por hash (`navigate`, `usePath`, `matchRoute`), boot, `format.ts` (kg, datas, relógio).
+- `src/media/` — `ClipPlayer` e `useVideoUrl`: tocar um trecho de vídeo guardado no aparelho.
 - `src/styles/base.css` — tokens (`--bg`, `--card`, `--accent`…) e classes compartilhadas
   (`.screen`, `.card`, `.btn`, `.btn-primary`, `.btn-ghost`, `.input`, `.label`, `.text-secondary`…). Reaproveite-as.
 - `legacy/` — app antigo, só para referência. Não editar.

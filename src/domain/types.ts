@@ -62,6 +62,10 @@ export interface Video extends Base {
   hasLocalBlob: boolean;
   /** Caminho no storage da nuvem (fase de sincronização). */
   remotePath?: string;
+  /** URI do arquivo já enviado à IA, para não reenviar ao retomar uma análise interrompida. */
+  aiFileUri?: string;
+  /** Quando `aiFileUri` deixa de valer (a IA apaga os arquivos após ~48h). */
+  aiFileExpiresAt?: Timestamp;
 }
 
 export interface VideoBlob {
